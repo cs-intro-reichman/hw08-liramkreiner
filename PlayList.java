@@ -159,7 +159,7 @@ class PlayList {
     {
         if(size<start||start>=maxSize||start<0)
             return -1;
-        int min=this.size[start].getDuration();
+        int min=this.tracks[start].getDuration();
         int index=start;
         for (int i=start;i<size ;i++ ) 
         {
@@ -169,7 +169,7 @@ class PlayList {
                 index=i;
             }   
         }
-        return i;
+        return index;
     }
     /** Returns the title of the shortest track in this list. 
      *  If the list is empty, returns null. */
@@ -187,10 +187,10 @@ class PlayList {
        for(int i=0;i<size;i++)
        {
             int index = this.minIndex(i);
-            Track swipe = this.track[index];
-            Track current = this.track[i];
-            this.track[i]=swipe;
-            this.track[index]=current;
+            Track swipe = this.tracks[index];
+            Track current = this.tracks[i];
+            this.tracks[i]=swipe;
+            this.tracks[index]=current;
        }
     }
 }
