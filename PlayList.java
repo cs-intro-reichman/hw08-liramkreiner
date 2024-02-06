@@ -112,11 +112,13 @@ class PlayList {
         if(this.size==0||i>=this.maxSize)
             return;
         this.tracks[i]=null; 
-        for (int k=i+1;k<size ;k++ ) 
+        for (int k=i+1;k<size;k++ ) 
         {
             this.tracks[k-1]=this.tracks[k];
         }
+        this.tracks[size-1]=null;
         size--;
+
     }
 
     /** Removes the first track that has the given title from this list.
@@ -155,8 +157,8 @@ class PlayList {
         {
             this.tracks[i]=other.getTrack(counter);
             counter++;
+            this.size++;
         }
-        this.size+=counter;
 
      }
 
