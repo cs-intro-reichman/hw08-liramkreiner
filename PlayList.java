@@ -109,17 +109,7 @@ class PlayList {
      *  does nothing and returns -1. */
     public void remove(int i) 
     {
-        if (this.size == 0 || i < 0 || i >= this.size) 
-        {
-            return;
-        }
-        this.tracks[i] = null;
-        for (int k = i + 1; k < this.size; k++) 
-        {
-            this.tracks[k - 1] = this.tracks[k];
-        }
-        this.tracks[this.size - 1] = null;
-        this.size--;
+        
     }
 
     /** Removes the first track that has the given title from this list.
