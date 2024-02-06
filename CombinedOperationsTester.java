@@ -20,17 +20,19 @@ public class CombinedOperationsTester {
 
         // Remove the last track and check size
         playList.removeLast();
+        System.out.println(PlayList[1]);
         System.out.println("Last track removed");
         System.out.println("Playlist Size: " + playList.getSize());
 
         // Add another track
         playList.add(new Track("Creep", "Radiohead", 369));
         System.out.println("Track added: Creep");
+        System.out.println(PlayList[1].toString());
+
 
         // Final state of the playlist
         System.out.println("Final Playlist Size: " + playList.getSize());
         System.out.println("Final Total Duration: " + playList.totalDuration() + " seconds");
-        System.out.println(playList.toString());
 
     
 
