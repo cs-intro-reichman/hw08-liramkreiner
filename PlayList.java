@@ -109,7 +109,7 @@ class PlayList {
      *  does nothing and returns -1. */
     public void remove(int i) 
     {
-        if(this.size==0||i=>this.maxSize)
+        if(this.size==0||i>=this.maxSize)
             return;
         this.tracks[i]=null; 
         for (int k=i+1;k<size ;k++ ) 
