@@ -93,8 +93,16 @@ class PlayList {
      *  returns true. */
     public boolean add(int i, Track track) 
     {
+        if(this.size>=this.maxSize||i>=maxSize)
+            return false;
+        for (int k=size;k<i ;k-- ) 
+        {
+            this.tracks[k]=this.tracks[k-1];
+        }
+        this.tracks[i]=track;
         this.size++;
         return true;
+
     }
      
     /** Removes the track in the given index from this list.
@@ -110,7 +118,7 @@ class PlayList {
             this.tracks[k-1]=this.tracks[k];
         }
         this.tracks[size-1]=null;
-        size--;
+        this.size--;
 
     }
 
@@ -130,7 +138,7 @@ class PlayList {
         if(this.tracks[0]!=null)
         {
             this.tracks[0]=null;
-            size--;  
+            this.size--;  
         }
         for (int i=1;i<size+1 ;i++ ) 
         {

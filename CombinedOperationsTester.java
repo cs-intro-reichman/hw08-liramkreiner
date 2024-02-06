@@ -43,6 +43,7 @@ public class CombinedOperationsTester {
         // Removing a track by index
         playList.remove(1); // This now refers to removing the second track which was "Imagine" initially
         System.out.println("Track at index 1 removed.");
+        System.out.println(playList.getSize());
         
         // Sorting the playlist
         playList.sortedInPlace();
