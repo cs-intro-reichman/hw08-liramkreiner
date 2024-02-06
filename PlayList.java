@@ -93,7 +93,7 @@ class PlayList {
      *  returns true. */
     public boolean add(int i, Track track) 
     {
-        
+        return true;
     }
      
     /** Removes the track in the given index from this list.
