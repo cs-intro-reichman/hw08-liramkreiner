@@ -109,15 +109,17 @@ class PlayList {
      *  does nothing and returns -1. */
     public void remove(int i) 
     {
-        if(this.size==0||i>=this.maxSize)
-            return;
-        this.tracks[i]=null; 
-        for (int k=i+1;k<size;k++ ) 
-        {
-            this.tracks[k-1]=this.tracks[k];
-        }
-        this.tracks[size-1]=null;
-        size--;
+    if (this.size == 0 || i < 0 || i >= this.size) 
+    {
+        return;
+    }
+    this.tracks[i] = null;
+    for (int k = i + 1; k < this.size; k++) {
+        this.tracks[k - 1] = this.tracks[k];
+    }
+    this.tracks[this.size - 1] = null;
+    this.size--;
+}
 
     }
 
@@ -174,7 +176,7 @@ class PlayList {
             return -1;
         int min=this.tracks[start].getDuration();
         int index=start;
-        for (int i=start;i<size ;i++ ) 
+        for (int i=start;i<size;i++ ) 
         {
             if(this.tracks[i].getDuration()<min)
             {
