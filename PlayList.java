@@ -63,7 +63,7 @@ class PlayList {
     public int totalDuration() 
     {   
         int sumedura = 0;
-        for(int i=0;i<size)
+        for(int i=0;i<size;i++)
             sumedura += this.tracks[i].getDuration();
         return sumedura;
     }
@@ -102,13 +102,13 @@ class PlayList {
      *  does nothing and returns -1. */
     public void remove(int i) 
     {
-        if(this.size=0||i>this.maxSize)
+        if(this.size==0||i>this.maxSize)
             return;
         this.tracks[i]=null;
         size--;
         for (int k=i+1;i<size+1 ;k++ ) 
         {
-            size[k-1]=size[k];
+            this.tracks[k-1]=this.tracks[k];
         }
     }
 
@@ -117,7 +117,7 @@ class PlayList {
      *  is negative or too big for this list, does nothing. */
     public void remove(String title) 
     {
-        int index = this.indexof(title);
+        int index = this.indexOf(title);
         if(index>-1)
             this.remove(index);
     }
@@ -132,7 +132,7 @@ class PlayList {
         }
         for (int i=1;i<size+1 ;i++ ) 
         {
-            size[i-1]=size[i];
+            this.tracks[i-1]=this.tracks[i];
         }
     }
     
