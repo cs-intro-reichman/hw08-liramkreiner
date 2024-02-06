@@ -95,8 +95,10 @@ class PlayList {
     {
         if(this.size>=this.maxSize||i>=maxSize)
             return false;
-        this.tracks[2]=this.tracks[1];
-        this.tracks[1]=this.tracks[0];
+        for (int j=this.size;j>i;j-- ) 
+        {
+            this.tracks[j]=this.tracks[j-1];
+        }
         this.tracks[i]=track;
         this.size++;
         return true;
