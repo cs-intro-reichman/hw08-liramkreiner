@@ -46,7 +46,14 @@ class PlayList {
     //// For an efficient implementation, use StringBuilder.
     public String toString() 
     {
-        return "";
+        if(size==0)
+            return"";
+        String str = this.tracks[0].toString();
+        for (int i=1;i<this.size ;i++ ) 
+        {
+            str+= "/n" + this.tracks[i].toString();
+        }
+        return str;
     }
 
     /** Removes the last track from this list. If the list is empty, does nothing. */
@@ -145,7 +152,6 @@ class PlayList {
             return;
         for(int i=size;i<maxSize;i++)
             this.tracks[i]=other.getTrack(i);
-
 
      }
 
