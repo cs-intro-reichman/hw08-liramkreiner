@@ -151,7 +151,10 @@ class PlayList {
         if(this.maxSize<=this.size)
             return;
         for(int i=size;i<maxSize;i++)
+        {
             this.tracks[i]=other.getTrack(i);
+            size++;
+        }
 
      }
 
