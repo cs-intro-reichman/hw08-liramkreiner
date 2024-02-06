@@ -154,9 +154,9 @@ class PlayList {
         for(int i=this.size;i<maxSize;i++)
         {
             this.tracks[i]=other.getTrack(counter);
-            this.size++;
             counter++;
         }
+        this.size+=counter;
 
      }
 
