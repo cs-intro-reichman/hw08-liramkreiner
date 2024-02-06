@@ -38,15 +38,16 @@ public class CombinedOperationsTester {
         // Adding tracks at specific indexes
         playList.add(0, new Track("Yesterday", "The Beatles", 125)); // Add at the beginning
         System.out.println("Track 'Yesterday' added at index 0.");
-        System.out.println("Final Total Duration: " + playList.totalDuration() + " seconds");
+        System.out.println(playList.getTrack(0).toString());
+        System.out.println(playList.getTrack(1).toString());
+        System.out.println(playList.getTrack(2).toString());
 
         playList.add(playList.getSize(), new Track("Bohemian Rhapsody", "Queen", 354)); // Assuming to add at the end
         System.out.println("Track 'Bohemian Rhapsody' added at the end.");
-        System.out.println("Final Total Duration: " + playList.totalDuration() + " seconds");
         // Removing a track by index
         playList.remove(1); // This now refers to removing the second track which was "Imagine" initially
         System.out.println("Track at index 1 removed.");
-        System.out.println("Final Total Duration: " + playList.totalDuration() + " seconds");
+
         
         // Sorting the playlist
         playList.sortedInPlace();
