@@ -150,7 +150,14 @@ class PlayList {
     //// An elegant and terribly inefficient implementation.
      public void add(PlayList other) 
      {
-        
+        if(this.maxSize<=this.size)
+            return;
+        int counter = 0;
+        for(int i=this.size;i<this.maxSize;i++)
+        {
+            this.tracks[i]=other.getTrack(counter);
+            counter++;
+            this.size++;
         }
 
      }
