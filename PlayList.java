@@ -52,9 +52,9 @@ class PlayList {
     /** Removes the last track from this list. If the list is empty, does nothing. */
      public void removeLast() 
      {
-        if(this.tracks[size]!=null)
+        if(this.tracks[size-1]!=null&&size>0)
         {
-            this.tracks[size]=null;
+            this.tracks[size-1]=null;
             size--;  
         }
      }
@@ -106,7 +106,7 @@ class PlayList {
             return;
         this.tracks[i]=null;
         size--;
-        for (int k=i+1;i<size+1 ;k++ ) 
+        for (int k=i+1;i<size ;k++ ) 
         {
             this.tracks[k-1]=this.tracks[k];
         }
