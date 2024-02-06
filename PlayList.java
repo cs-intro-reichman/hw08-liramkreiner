@@ -139,9 +139,15 @@ class PlayList {
     /** Adds all the tracks in the other list to the end of this list. 
      *  If the total size of both lists is too large, does nothing. */
     //// An elegant and terribly inefficient implementation.
-     public void add(PlayList other) {
-        //// replace this comment with your code
-    }
+     public void add(PlayList other) 
+     {
+        if(this.maxSize<=other.getSize()+this.size)
+            return;
+        for(int i=size;i<maxSize;i++)
+            this.tracks[i]=other.getTrack(i);
+
+
+     }
 
     /** Returns the index in this list of the track that has the shortest duration,
      *  starting the search in location start. For example, if the durations are 
@@ -149,11 +155,22 @@ class PlayList {
      *  minimum value (5) when starting the search from index 2.  
      *  If start is negative or greater than size - 1, returns -1.
      */
-    private int minIndex(int start) {
-        //// replace the following statement with your code
-        return 0;
+    private int minIndex(int start) 
+    {
+        if(size<start||start>=maxSize||start<0)
+            return -1;
+        int min=this.size[start].getDuration();
+        int index=start;
+        for (int i=start;i<size ;i++ ) 
+        {
+            if(this.tracks[i].getDuration()<min)
+            {
+                min=this.tracks[i].getDuration();
+                index=i;
+            }   
+        }
+        return i;
     }
-
     /** Returns the title of the shortest track in this list. 
      *  If the list is empty, returns null. */
     public String titleOfShortestTrack() {
@@ -166,8 +183,14 @@ class PlayList {
      *  the list on which it was called (this list). */
     public void sortedInPlace() 
     {
-        // Uses the selection sort algorithm,  
-        // calling the minIndex method in each iteration.
-        //// replace this statement with your code
+        
+       for(int i=0;i<size;i++)
+       {
+            int index = this.minIndex(i);
+            Track swipe = this.track[index];
+            Track current = this.track[i];
+            this.track[i]=swipe;
+            this.track[index]=current;
+       }
     }
 }
