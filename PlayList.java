@@ -93,6 +93,7 @@ class PlayList {
      *  returns true. */
     public boolean add(int i, Track track) 
     {
+        this.size++;
         return true;
     }
      
